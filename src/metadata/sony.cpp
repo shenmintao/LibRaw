@@ -450,6 +450,7 @@ void LibRaw::setSonyBodyFeatures(unsigned long long id) {
   case SonyID_ILCE_6700:
   case SonyID_ILCE_7CR:
   case SonyID_ILCE_7CM2:
+  case SonyID_ILCE_7M5:
   case SonyID_ILCE_9M3:
   case SonyID_ZV_E10M2:
     imSony.group9050 = LIBRAW_SONY_Tag9050d;

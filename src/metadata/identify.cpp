@@ -3124,6 +3124,36 @@ void LibRaw::identify_finetune_dcr(char head[64], INT64 fsize, INT64 flen)
 
 		  /* need samples for lossy small/medium w/ APC crop*/
         }
+		else if (unique_id == SonyID_ILCE_7M5)
+        {
+          if (raw_width == 7168 && raw_height == 5120) 
+          {
+            width = 7008;
+            height = 4672;
+          }
+          else if (raw_width == 4736) // APS-C crop
+          {
+            width = 4608;
+            height = 3072;
+          }
+          else if (raw_width == 5120) // Lossy/Medium
+          {
+            width = 4608;
+            height = 3072;
+          }
+          else if (raw_width == 3584) // Lossy/Small
+          {
+            width = 3504;
+            height = 2336;
+          }
+          else if (raw_width == 7040) // FF uncompressed/lossy
+          {
+            width -= 12;
+          }
+		  else
+            imgdata.process_warnings |= LIBRAW_WARN_VENDOR_CROP_SUGGESTED;
+          /* FIXME: need APS-C samples, both losslesscompressed and uncompressed or lossy */
+        }
         else if ((unique_id == SonyID_ILCE_7M4)|| (unique_id == SonyID_ILCE_7CM2) || (unique_id == SonyID_ILME_FX2))
         {
           if (raw_width == 7168 && raw_height == 5120) 

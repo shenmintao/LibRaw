@@ -383,6 +383,7 @@ void LibRaw::GetNormalizedModel()
       { SonyID_ILCE_7RM3A,     "ILCE-7RM3A"},
       { SonyID_ILCE_7RM4A,     "ILCE-7RM4A"},
       { SonyID_ILCE_7M4,       "ILCE-7M4"},
+      { SonyID_ILCE_7M5,       "ILCE-7M5"},
 
 // Sony ZV-1F doesn't save raw
 //      { SonyID_ZV_1F,          "ZV-1F"},
